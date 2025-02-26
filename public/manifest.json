@@ -1,5 +1,5 @@
 {
-  "manefest_version": 3,
+  "manifest_version": 3,
   "version": "1.0",
   "name": "TxLens",
   "action": {
@@ -8,6 +8,9 @@
   "permissions": ["scripting"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "icons": {
-    "16": "logo.png"
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   }
 }
