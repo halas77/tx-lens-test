@@ -1,0 +1,13 @@
+{
+  "manefest_version": 3,
+  "version": "1.0",
+  "name": "TxLens",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "16": "logo.png"
+  }
+}
