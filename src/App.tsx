@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Tab from "./components/Tab";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState<"summary" | "details" | "raw">(
@@ -60,6 +61,9 @@ const App = () => {
 
       {/* Loading component */}
       {isLoading && <Loading />}
+
+      <Footer />
+      
     </div>
   );
 };
