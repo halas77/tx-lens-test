@@ -9,26 +9,13 @@ import Banner from "./components/Banner";
 import Tab from "./components/Tab";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import { mockData } from "./utils/constants";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState<"summary" | "details" | "raw">(
     "summary"
   );
   const [isLoading, setIsLoading] = useState(false);
-
-  const mockData = {
-    transactionHash: "0x4a7b...c329",
-    status: "Confirmed",
-    blockNumber: 17543021,
-    from: "0x89205...C3B2",
-    to: "0x7a3b8...D9F1",
-    value: "1.542 ETH",
-    gasFee: "0.0031 ETH ($5.42)",
-    summary:
-      "This transaction represents a standard ETH transfer between two non-contract addresses.This transaction represents a standard ETH transfer between two non-contract addresses.",
-    riskLevel: "low",
-    timestamp: "2023-08-20 15:42:23 UTC",
-  };
 
   return (
     <div className="w-[400px] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4">
@@ -63,7 +50,6 @@ const App = () => {
       {isLoading && <Loading />}
 
       <Footer />
-      
     </div>
   );
 };
