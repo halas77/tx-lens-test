@@ -1,6 +1,12 @@
 import { TabPropTypes } from "../utils/types";
 
-const Tab = ({activeTab, setActiveTab}:TabPropTypes) => {
+/**
+ * Tab component for rendering navigation tabs with active state and click handling.
+ * @param activeTab - The currently active tab.
+ * @param setActiveTab - Function to set the active tab.
+ */
+
+const Tab = ({ activeTab, setActiveTab }: TabPropTypes) => {
   return (
     <nav className="flex space-x-4 mb-4 border-b border-gray-200 dark:border-gray-700">
       {["summary", "details", "raw"].map((tab) => (

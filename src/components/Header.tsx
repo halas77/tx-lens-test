@@ -1,6 +1,12 @@
 import { ArrowPathIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { LoadingType } from "../utils/types";
 
+/**
+ * Header component with a title and a button to toggle loading state.
+ * @param setIsLoading Function to set loading state.
+ * @param isLoading Current loading state.
+ */
+
 const Header = ({ setIsLoading, isLoading }: LoadingType) => {
   return (
     <header className="flex items-center justify-between mb-6">

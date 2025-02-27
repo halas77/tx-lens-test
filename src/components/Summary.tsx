@@ -1,5 +1,11 @@
 import { SummaryMockDataType } from "../utils/types";
 
+/**
+ * Renders a summary section with provided mock data in a styled container.
+ * @param mockData - The mock data containing the summary text.
+ */
+
+
 const Summary = (mockData: SummaryMockDataType) => {
   return (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg prose dark:prose-invert">

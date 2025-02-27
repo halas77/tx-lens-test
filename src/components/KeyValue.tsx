@@ -1,6 +1,11 @@
 import { ClipboardIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
+/**
+ * KeyValue component displays a label and value with a copy-to-clipboard button.
+ */
+
+
 const KeyValue = ({
   label,
   value,

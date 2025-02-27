@@ -1,6 +1,11 @@
 import { DetailsMockDataType } from "../utils/types";
 import KeyValue from "./KeyValue";
 
+/**
+ * Renders transaction details using provided mock data.
+ * @param mockData - The mock data for transaction details.
+ */
+
 const Details = (mockData: DetailsMockDataType) => {
   return (
     <div className="space-y-3">

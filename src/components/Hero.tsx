@@ -1,5 +1,10 @@
 import { HeroPropsType } from "../utils/types";
 
+/**
+ * Hero component displays transaction amount and gas fee in a styled grid layout.
+ * @param mockData - The data for the Hero component.
+ */
+
 const Hero = (mockData: HeroPropsType) => {
   return (
     <div>
