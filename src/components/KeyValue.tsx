@@ -14,7 +14,7 @@ const KeyValue = ({
   value: string | React.ReactNode;
 }) => (
   <div className="flex justify-between items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
-    <span className="text-sm text-gray-500 dark:text-gray-400">{label}</span>
+    <span className="text-sm text-gray-500 dark:text-gray-300">{label}</span>
     <div className="flex items-center space-x-2">
       {typeof value === "string" ? (
         <span className="text-sm font-medium">{value}</span>

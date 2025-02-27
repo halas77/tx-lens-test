@@ -11,3 +11,6 @@ export const mockData = {
   riskLevel: "low",
   timestamp: "2023-08-20 15:42:23 UTC",
 };
+
+export const customScroll =
+  "[&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400";

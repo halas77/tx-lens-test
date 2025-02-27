@@ -14,8 +14,8 @@ const Tab = ({ activeTab, setActiveTab }: TabPropTypes) => {
           key={tab}
           className={`pb-2 px-1 capitalize ${
             activeTab === tab
-              ? "border-b-2 border-blue-500 text-blue-500"
-              : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+              ? "border-b-2 border-blue-300 text-blue-300"
+              : "text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100"
           }`}
           onClick={() => setActiveTab(tab as typeof activeTab)}
         >
