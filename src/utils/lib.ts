@@ -21,3 +21,17 @@ export const checkCurrentSite = async () => {
     return false;
   }
 };
+
+export const getUrlFromChrome = async () => {
+  try {
+    const [tab] = await chrome.tabs.query({
+      active: true,
+      currentWindow: true,
+    });
+
+    return tab.url;
+  } catch (error) {
+    console.error("Error fetching URL from Chrome:", error);
+    return null;
+  }
+};
