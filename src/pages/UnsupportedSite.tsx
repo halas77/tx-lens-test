@@ -34,7 +34,9 @@ const UnsupportedSite = () => {
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
           Don't see your network?
           <a
-            href="mailto:dawitm777@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=dawitm777@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-blue-300 hover:underline"
           >
             {" "}
