@@ -2,10 +2,14 @@
   "manifest_version": 3,
   "version": "1.0",
   "name": "TxLens",
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "index.html"
   },
-  "permissions": ["scripting", "activeTab", "tabs"],
+  "permissions": ["scripting", "activeTab", "tabs", "declarativeNetRequest"],
+
   "host_permissions": ["http://*/*", "https://*/*"],
   "icons": {
     "16": "logo.png",

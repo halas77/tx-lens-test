@@ -18,7 +18,7 @@ const Home = () => {
     "summary"
   );
 
-  const [txData, setTxData] = useState();
+  const [, setTxData] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
   const getUrl = async () => {
@@ -26,14 +26,14 @@ const Home = () => {
       setIsLoading(true);
       const url = await getUrlFromChrome();
 
+
       if (!url) {
         return;
       }
       const response = await axios.get(
         `http://localhost:5000/api/tx-data/${url}`
       );
-      setTxData(response.data);
-      console.log(response.data);
+      setTxData(response?.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -52,8 +52,6 @@ const Home = () => {
   return (
     <div className="w-[400px] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4">
       <Header isLoading={isLoading} setIsLoading={setIsLoading} />
-
-      <p>{txData}</p>
 
       {mockData.riskLevel !== "low" && <Banner />}
 

@@ -1,12 +1,22 @@
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import { getUrlFromChrome } from "../utils/lib";
 
 const UnsupportedSite = () => {
+  const handleClick = async () => {
+    const url = await getUrlFromChrome();
+
+    console.log("url", url);
+  };
   return (
     <div className="w-[400px] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6">
       <div className="flex flex-col items-center text-center space-y-4">
         <img src="/logo.png" alt="TxLens" className="h-16 w-16" />
 
         <h2 className="text-2xl font-bold">Unsupported Site</h2>
+
+        <button onClick={handleClick} className="bg-white px-4 py-1 text-black">
+          test
+        </button>
 
         <p className="text-gray-600 dark:text-gray-400">
           This extension only works on supported block explorers. Visit any of
