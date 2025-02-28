@@ -14,3 +14,12 @@ export const mockData = {
 
 export const customScroll =
   "[&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400";
+
+export const SUPPORTED_DOMAINS = [
+  "etherscan.io",
+  "bscscan.com",
+  "polygonscan.com",
+  "snowtrace.io",
+  "ftmscan.com",
+  "arbiscan.io",
+];
