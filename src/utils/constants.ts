@@ -18,6 +18,7 @@ export const customScroll =
 export const SUPPORTED_DOMAINS = [
   "etherscan.io",
   "bscscan.com",
+  "lisk.com",
   "polygonscan.com",
   "snowtrace.io",
   "ftmscan.com",

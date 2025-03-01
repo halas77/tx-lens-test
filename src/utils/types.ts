@@ -44,7 +44,6 @@ export interface DetailsMockDataType {
 
 export interface LoadingType {
   setIsLoading: (value: boolean) => void;
-  isLoading: boolean;
 }
 
 export interface TabPropTypes {
