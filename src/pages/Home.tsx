@@ -5,79 +5,84 @@ import Raw from "../components/Raw";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Tab from "../components/Tab";
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import { mockData } from "../utils/constants";
-import { useState } from "react";
-import { useEffect } from "react";
-import { getUrlFromChrome } from "../utils/lib";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import { fetchTxData, getUrlFromChrome } from "../utils/lib";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState<"summary" | "details" | "raw">(
     "summary"
   );
 
-  const [, setTxData] = useState();
+  const [txData, setTxData] = useState<any>();
   const [isLoading, setIsLoading] = useState(false);
 
-  const getUrl = async () => {
-    try {
+  useEffect(() => {
+    const fetchData = async () => {
       setIsLoading(true);
       const url = await getUrlFromChrome();
-
-
-      if (!url) {
-        return;
+      if (url) {
+        const data = await fetchTxData(url);
+        setTxData(data);
+        setIsLoading(false);
+      } else {
+        setTxData({ data: "No data available." });
+        setIsLoading(false);
       }
-      const response = await axios.get(
-        `http://localhost:5000/api/tx-data/${url}`
-      );
-      setTxData(response?.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    };
 
-  useEffect(() => {
-    getUrl();
+    fetchData();
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
-
   return (
-    <div className="w-[400px] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4">
-      <Header isLoading={isLoading} setIsLoading={setIsLoading} />
+    <div className="w-[400px] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4 min-h-screen flex flex-col">
+      {isLoading ? (
+        <div className="flex-grow flex items-center justify-center">
+          <Loading />
+        </div>
+      ) : (
+        <>
+          <Header isLoading={isLoading} setIsLoading={setIsLoading} />
 
-      {mockData.riskLevel !== "low" && <Banner />}
+          {mockData.riskLevel !== "low" && <Banner />}
 
-      <Hero gasFee={mockData.gasFee} value={mockData.value} />
+          {/* {txData ? (
+            <pre className="text-sm p-2 rounded">
+              {JSON.stringify(txData?.data?.summary, null, 2)}
+            </pre>
+          ) : (
+            <p>No data available.</p>
+          )} */}
 
-      <Tab activeTab={activeTab} setActiveTab={setActiveTab} />
+          {/* <Hero gasFee={mockData.gasFee} value={mockData.value} /> */}
 
-      <div className="space-y-4">
-        {activeTab === "summary" && <Summary summary={mockData.summary} />}
+          <Tab activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        {activeTab === "details" && (
-          <Details
-            from={mockData.from}
-            status={mockData.status}
-            timestamp={mockData.timestamp}
-            to={mockData.from}
-            transactionHash={mockData.transactionHash}
-          />
-        )}
+          <div className="space-y-4">
+            {activeTab === "summary" && (
+              <Summary summary={txData?.data?.summary} />
+            )}
 
-        {activeTab === "raw" && <Raw mockData={mockData} />}
-      </div>
+            {activeTab === "details" && (
+              <Details
+                from={mockData.from}
+                status={mockData.status}
+                timestamp={mockData.timestamp}
+                to={mockData.from}
+                transactionHash={mockData.transactionHash}
+              />
+            )}
 
-      {isLoading && <Loading />}
+            {activeTab === "raw" && <Raw mockData={mockData} />}
+          </div>
 
-      <Footer />
+          {isLoading && <Loading />}
+
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

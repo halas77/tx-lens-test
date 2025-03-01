@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import UnsupportedSite from "./pages/UnsupportedSite";
 import Loading from "./components/Loading";
 import Home from "./pages/Home";

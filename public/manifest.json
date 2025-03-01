@@ -8,7 +8,13 @@
   "action": {
     "default_popup": "index.html"
   },
-  "permissions": ["scripting", "activeTab", "tabs", "declarativeNetRequest"],
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "tabs",
+    "declarativeNetRequest",
+    "storage"
+  ],
 
   "host_permissions": ["http://*/*", "https://*/*"],
   "icons": {

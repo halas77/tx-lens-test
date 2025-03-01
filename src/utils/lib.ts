@@ -1,3 +1,4 @@
+import axios from "axios";
 import { SUPPORTED_DOMAINS } from "./constants";
 
 export const checkCurrentSite = async () => {
@@ -33,5 +34,15 @@ export const getUrlFromChrome = async () => {
   } catch (error) {
     console.error("Error fetching URL from Chrome:", error);
     return null;
+  }
+};
+
+export const fetchTxData = async (url: string) => {
+  try {
+    const res = await axios.post("http://localhost:5000/api/tx-data", { url });
+    return res.data;
+  } catch (error) {
+    console.error("Error fetching transaction data:", error);
+    return error;
   }
 };

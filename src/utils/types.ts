@@ -11,6 +11,25 @@ export interface MockDataType {
   timestamp: string;
 }
 
+export interface TransactionDetails {
+  summary: string;
+  txData: {
+    transactionHash: string;
+    status: string;
+    block: string;
+    timestamp: string;
+    from: string;
+    to: string;
+    value: string;
+    gasPrice: string;
+    additionalDetails: {
+      etherPrice: string;
+      gasUsed: string;
+      nonce: string;
+    };
+  };
+}
+
 export interface SummaryMockDataType {
   summary: string;
 }
