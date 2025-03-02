@@ -30,21 +30,20 @@ const Home = () => {
 
   return (
     <div className="w-[400px] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-4 min-h-screen flex flex-col">
+      <Header setIsLoading={setIsLoading} />
+
       {isLoading ? (
         <div className="flex-grow flex items-center justify-center">
           <Loading />
         </div>
       ) : (
         <>
-          <Header setIsLoading={setIsLoading} />
-
           {mockData.riskLevel !== "low" && <Banner />}
-
           <Summary summary={txData?.data?.summary} />
-
-          <Footer />
         </>
       )}
+
+      <Footer />
     </div>
   );
 };
