@@ -9,7 +9,7 @@ const Footer = () => {
         className="text-blue-300 hover:underline"
       >
         {" "}
-        halas77
+        halas77 🇪🇹
       </a>
       .
     </footer>

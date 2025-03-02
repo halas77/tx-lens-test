@@ -15,18 +15,28 @@ const UnsupportedSite = () => {
 
         <div className="w-full space-y-2">
           {[
-            "Etherscan (Ethereum)",
-            "BscScan (BNB Chain)",
-            "PolygonScan (Polygon)",
-            "Arbiscan (Arbitrum)",
-            "SnowTrace (Avalanche)",
+            {
+              name: "Ethereum (Etherscan)",
+              url: "https://etherscan.io",
+            },
+            {
+              name: "Sepolia Testnet (Sepolia)",
+              url: "https://sepolia.etherscan.io/",
+            },
           ].map((network) => (
             <div
-              key={network}
-              className="flex items-center space-x-2 p-2 bg-white dark:bg-gray-800 rounded-lg justify-center"
+              key={network.name}
+              className=" bg-white dark:bg-gray-800 rounded-lg "
             >
-              <GlobeAltIcon className="h-5 w-5 text-gray-400" />
-              <span className="text-sm">{network}</span>
+              <a
+                href={network.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 p-2 justify-center text-blue-300 hover:underline"
+              >
+                <GlobeAltIcon className="h-5 w-5 text-gray-400" />
+                <span className="text-sm">{network.name}</span>
+              </a>
             </div>
           ))}
         </div>
