@@ -1,11 +1,11 @@
 import Summary from "../components/Summary";
 import Loading from "../components/Loading";
 import Header from "../components/Header";
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 import Footer from "../components/Footer";
-import { mockData } from "../utils/constants";
+// import { mockData } from "../utils/constants";
 import { useEffect, useState } from "react";
-import { fetchTxData, getUrlFromChrome } from "../utils/lib";
+import { fetchSummary, getUrlFromChrome } from "../utils/lib";
 
 const Home = () => {
   const [txData, setTxData] = useState<any>();
@@ -16,7 +16,7 @@ const Home = () => {
       setIsLoading(true);
       const url = await getUrlFromChrome();
       if (url) {
-        const data = await fetchTxData(url);
+        const data = await fetchSummary(url);
         setTxData(data);
         setIsLoading(false);
       } else {
@@ -38,7 +38,7 @@ const Home = () => {
         </div>
       ) : (
         <>
-          {mockData.riskLevel !== "low" && <Banner />}
+          {/* {mockData.riskLevel !== "low" && <Banner />} */}
           <Summary summary={txData?.data?.summary} />
         </>
       )}

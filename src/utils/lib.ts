@@ -37,7 +37,7 @@ export const getUrlFromChrome = async () => {
   }
 };
 
-export const fetchTxData = async (url: string) => {
+export const fetchSummary = async (url: string) => {
   try {
     const res = await axios.post("http://localhost:5000/api/tx-data", { url });
     return res.data;
