@@ -13,15 +13,15 @@ const Loading = () => {
           <div className="absolute h-full w-full border-4 border-blue-500/30 rounded-full"></div>
           <div
             className="absolute h-full w-full border-4 border-transparent rounded-full 
-            [border-top:4px_solid_#3b82f6] [border-bottom:4px_solid_#8b5cf6] animate-spin"
+            border-t-4 border-b-4 border-t-blue-500 border-b-cyan-500 animate-spin"
           >
             <div className="absolute -top-1 -left-1 h-2 w-2 bg-blue-500 rounded-full shadow-lg"></div>
-            <div className="absolute -bottom-1 -right-1 h-2 w-2 bg-purple-500 rounded-full shadow-lg"></div>
+            <div className="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-500 rounded-full shadow-lg"></div>
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <div className="h-4 w-32 bg-gradient-to-r from-blue-500 to-purple-500 animate-text-pulse rounded-full"></div>
+          <div className="h-4 w-32 bg-gradient-to-r from-blue-500 to-cyan-500 animate-text-pulse rounded-full"></div>
           <p className="text-sm text-gray-600 dark:text-gray-400 font-mono flex items-center gap-1">
             Analyzing Blockchain Data
           </p>
